@@ -8,6 +8,8 @@ export function turnOnStrictMode(info: PluginInfo, currentOptions: CompilerOptio
   info.project.setCompilerOptions({
     ...currentOptions,
     strict: true,
+    strictNullChecks: true,
+    noImplicitAny: true,
   });
 }
 
@@ -15,6 +17,8 @@ export function turnOffStrictMode(info: PluginInfo, currentOptions: CompilerOpti
   info.project.setCompilerOptions({
     ...currentOptions,
     strict: false,
+    strictNullChecks: false,
+    noImplicitAny: false,
   });
 }
 
