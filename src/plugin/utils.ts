@@ -5,11 +5,10 @@ import { PLUGIN_NAME } from '../common/constants';
 export type PluginInfo = ts_module.server.PluginCreateInfo;
 
 export function turnOnStrictMode(info: PluginInfo, currentOptions: CompilerOptions): void {
+  const options: CompilerOptions = info.config.options;
   info.project.setCompilerOptions({
     ...currentOptions,
-    strict: true,
-    strictNullChecks: true,
-    noImplicitAny: true,
+    ...options,
   });
 }
 
